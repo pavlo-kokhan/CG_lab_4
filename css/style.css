@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    border: none;
+    background-color: white;
+}
+
+button:hover {
+    background-color: aqua;
+}
+
+canvas {
+    border: 1px solid lightgrey;
+}
+
+.settings_name_header {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}

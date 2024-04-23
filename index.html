@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>lab_4</title>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <ul class="settings form-group col-6">
+            <li>
+                <div class="d-flex justify-content-center mb-3">
+                    <h4>Select Image</h4>
+                    <button id="imageButton" class="ml-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 48 48">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                                  d="m26.122 37.435l14.142-14.142c2.828-2.828 4.243-9.9-.707-14.85c-4.95-4.949-12.02-3.535-14.85-.706L5.617 26.829c-1.414 1.414-3.536 6.364.707 10.606c4.243 4.243 9.192 2.121 10.607.707l18.384-18.385c1.414-1.414 2.122-4.95 0-7.07c-2.121-2.122-5.657-1.415-7.07 0L14.807 26.121"/>
+                        </svg>
+                    </button>
+                    <input type="file" id="imageInput" accept="image/jpeg" class="d-none">
+                </div>
+            </li>
+            <li>
+                <h4 class="settings_name_header">Convert Spaces (RGB Result)</h4>
+                <div class="d-flex mb-3">
+                    <button id="rgbToLabBtn" class="form-control">RGB to Lab to RGB</button>
+                    <button id="rgbToHslBtn" class="form-control ml-2">RGB to Hsl to RGB</button>
+                </div>
+            </li>
+            <li>
+                <h4 class="settings_name_header">Convert Spaces (Not RGB Result)</h4>
+                <div class="d-flex mb-3">
+                    <button id="rgbToLabUnsafeBtn" class="form-control">RGB to Lab</button>
+                    <button id="rgbToHslUnsafeBtn" class="form-control ml-2">RGB to Hsl</button>
+                </div>
+            </li>
+            <li>
+                <h4 class="settings_name_header">Changing Saturation of Magenta in HSL</h4>
+                <div class="d-flex mb-3">
+                    <input type="number" id="saturationInput" min="0" max="100" value="0" class="form-control">
+                    <button id="changeSaturationBtn" class="form-control ml-2">Change</button>
+                </div>
+            </li>
+            <li>
+                <h4 class="settings_name_header">Result</h4>
+                <div class="d-flex mb-3">
+                    <button id="saveImageBtn" class="form-control">Save Image</button>
+                    <button id="resetImageBtn" class="form-control ml-2">Reset Image</button>
+                </div>
+            </li>
+            <li>
+                <h4 class="settings_name_header">Selected Pixel Values</h4>
+                <div id="colorSpaceValuesBlock" class="mb-3 border">
+                    <div class="ml-2">RGB: (0, 0, 0)</div>
+                    <div class="ml-2">Lab: (0.00, 0.00, 0.00)</div>
+                    <div class="ml-2">HSL: (0, 0, 0)</div>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="canvas_container col-6">
+            <canvas id="canvasOriginal" width="400" height="400"></canvas>
+            <canvas id="canvasEdited" width="400" height="400"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="./js/index.js"></script>
+</body>
+</html>
